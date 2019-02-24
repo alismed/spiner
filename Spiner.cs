@@ -8,7 +8,7 @@ namespace spinner
         static string[,] options = null;
         int totalOptions = 0;
         int sequence;
-        
+
         public ConsoleSpiner()
         {
             counter = 0;
@@ -28,11 +28,12 @@ namespace spinner
             Random rnd = new Random();
             sequence = rnd.Next(totalOptions);
         }
+
         public void Turn()
         {
             counter++;
             System.Threading.Thread.Sleep(200);
-            
+
             switch (counter % 5)
             {
                 case 0: Console.Write(options[sequence, 0]); break;
@@ -43,5 +44,5 @@ namespace spinner
             }
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
         }
-    } 
+    }
 }
