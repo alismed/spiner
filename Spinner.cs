@@ -2,14 +2,14 @@ using System;
 
 namespace spinner
 {
-    public class ConsoleSpiner
+    public class Spinner
     {
         int counter;
         static string[,] options = null;
         int totalOptions = 0;
         int sequence;
 
-        public ConsoleSpiner()
+        public Spinner()
         {
             counter = 0;
 

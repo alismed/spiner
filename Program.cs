@@ -6,28 +6,28 @@ namespace spinner
     class Program
     {
         static Boolean running = false;
-        private static Thread theSpiner;
+        private static Thread theSpinner;
 
-        private static void Spiner()
+        private static void Spinner()
         {
-            ConsoleSpiner progress = new ConsoleSpiner();
+            Spinner progress = new Spinner();
 
             while (running)
                 progress.Turn();
         }
 
-        private static void startSpiner()
+        private static void startSpinner()
         {
             running = true;
-            theSpiner = new Thread(Spiner);
-            theSpiner.Name = "spiner";
+            theSpinner = new Thread(Spinner);
+            theSpinner.Name = "spinner";
             Console.WriteLine("Press CTRL-C to exit ");
             Console.WriteLine(String.Empty);
             Console.Write("Wait ");
-            theSpiner.Start();
+            theSpinner.Start();
         }
 
-        private static void stopSpiner()
+        private static void stopSpinner()
         {
             running = false;
             Console.CursorTop = Console.CursorTop - 1;
@@ -35,13 +35,13 @@ namespace spinner
 
         static void Main(string[] args)
         {
-            startSpiner();
+            startSpinner();
 
             // do something
             Thread.Sleep(3000);
 
             // stop
-            stopSpiner();
+            stopSpinner();
         }
     }
 }
